@@ -36,5 +36,30 @@
 # 		return False
 
 
+# MULTIPROCESSING
+# from multiprocessing import Process
+#
+# def warker():
+# 	pass
+#
+# p = Process(target=warker)
+# p.start()
+#
+# import time
+# def wait_worker():
+# 	time.sleep(5)
+#
+# # p.terminate()
+# p.join()
 
-def
+
+import os
+import psutil
+
+def show_process_priority():
+	process = psutil.Process(os.getpid)
+
+	print(f"Приоритет процесса: {process.nice()}")
+	try:
+		process.nice(10)
+	except
