@@ -53,13 +53,19 @@
 # p.join()
 
 
-import os
-import psutil
+# import os
+# import psutil
+#
+# def show_process_priority():
+# 	process = psutil.Process(os.getpid)
+#
+# 	print(f"Приоритет процесса: {process.nice()}")
+# 	try:
+# 		process.nice(10)
+# 	except
 
-def show_process_priority():
-	process = psutil.Process(os.getpid)
+class Point:
+	def __new__(cls, *args, **kwargs):
+		print("TOOOOOOO")
+		return super().__new__(cls)
 
-	print(f"Приоритет процесса: {process.nice()}")
-	try:
-		process.nice(10)
-	except
