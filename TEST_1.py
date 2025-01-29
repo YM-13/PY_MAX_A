@@ -8,5 +8,7 @@ class Solution:
 
 g = Solution()
 
+
 print(g.defangIPaddr("1.1.1.1"))
 print(g.defangIPaddr("255.100.50.0"))
+
