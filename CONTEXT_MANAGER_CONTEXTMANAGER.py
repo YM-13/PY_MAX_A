@@ -11,3 +11,13 @@ def file_manager(filename, mode):
 # Использование
 with file_manager("example.txt", "w") as file:
     file.write("This is a context manager using a decorator.")
+
+
+# ИЗ КУРСАЖ
+from contextlib import contextmanager
+
+@contextmanager
+def open_file(name):
+    f = open(name, 'w')
+    yield f
+    f.close()
