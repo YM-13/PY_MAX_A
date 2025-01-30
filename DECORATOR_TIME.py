@@ -11,7 +11,7 @@ def benchmark(iters):
                 return_value = func(*args, **kwargs)
                 end = time.time()
                 total = total + (end-start)
-            print('[*] Среднее время выполнения: {} секунд.'.format(total/iters))
+            print(f'[*] Среднее время выполнения: {total/iters} секунд.')
             return return_value
 
         return wrapper
