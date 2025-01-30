@@ -1,4 +1,5 @@
 import time
+import requests
 
 def benchmark(iters):
     def actual_decorator(func):
@@ -18,6 +19,5 @@ def benchmark(iters):
 
 @benchmark(iters=10)
 def fetch_webpage(url):
-    import requests
     webpage = requests.get(url)
     return webpage.text
