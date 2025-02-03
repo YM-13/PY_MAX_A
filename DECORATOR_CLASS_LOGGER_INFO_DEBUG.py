@@ -1,3 +1,4 @@
+
 class Logger:
     def __init__(self, log_level="INFO"):
         """Инициализация декоратора с параметром log_level ('INFO', 'DEBUG')."""
@@ -5,13 +6,17 @@ class Logger:
 
     def __call__(self, func):
         """Вызывается при декорировании функции."""
-        def wrapper(*args, **kwargs):
-            if self.log_level == "DEBUG":
-                print(f"[DEBUG] Вызов функции '{func.__name__}' с аргументами {args}, {kwargs}")
-            elif self.log_level == "INFO":
-                print(f"[INFO] Выполнение функции '{func.__name__}'")
-            result = func(*args, **kwargs)
+        def wrapper(*args, **kwargs): #!!!!!
+
+            # if self.log_level == "DEBUG":
+            #     print(f"[DEBUG] Вызов функции '{func.__name__}' с аргументами {args}, {kwargs}")
+            # elif self.log_level == "INFO":
+            #     print(f"[INFO] Выполнение функции '{func.__name__}'")
+
+            result = func(*args, **kwargs)#!!!!!
+
             print(f"[INFO] Функция '{func.__name__}' завершила выполнение")
+
             return result
         return wrapper
 
@@ -22,12 +27,12 @@ def add(a, b):
 print(add(5, 3))
 
 
-'''[DEBUG] Вызов функции 'add' с аргументами (5, 3), {}
+'''
+[DEBUG] Вызов функции 'add' с аргументами (5, 3), {}
 [INFO] Функция 'add' завершила выполнение
 8
-'''
 
-'''Как это работает?
+Как это работает?
 
 Logger(log_level="DEBUG") передаёт "DEBUG" в __init__, сохраняя уровень логирования.
 wrapper() логирует вызовы в зависимости от уровня.'''

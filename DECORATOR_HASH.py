@@ -9,10 +9,10 @@ def hash_decorator(func):
 		immutible_args = tuple([tuple(arg) if isinstance(arg, list) else arg for arg in args])
 		immutible_kwargs = tuple(sorted((k, v) for k, v in kwargs.items()))
 
-		hash_key = hashlib.sha256(str(args).encode() + str(kwargs).encode()).hexdigest()
+		hash_key = hashlib.sha256(str(immutible_args).encode() + str(immutible_kwargs).encode()).hexdigest()
 
 		if hash_key in cache:
-			print("Cache hit for {hash_key}")
+			print(f"Cache hit for {hash_key}")
 			return cache[hash_key]
 
 

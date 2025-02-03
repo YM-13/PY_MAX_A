@@ -11,7 +11,7 @@ def logging_deco(name: str):
 			return a_wrapper
 		else:
 			def wrapper(*args, **kwargs):
-			# do something
+				# do something
 				result = func(*args, **kwargs)
 				# do something
 				return result

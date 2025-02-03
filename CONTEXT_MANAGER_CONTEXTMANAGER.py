@@ -13,7 +13,7 @@ with file_manager("example.txt", "w") as file:
     file.write("This is a context manager using a decorator.")
 
 
-# ИЗ КУРСАЖ
+# ИЗ КУРСА
 from contextlib import contextmanager
 
 @contextmanager
